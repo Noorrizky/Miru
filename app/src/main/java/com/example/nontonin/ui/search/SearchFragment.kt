@@ -30,19 +30,20 @@ class SearchFragment : Fragment() {
         val root: View = binding.root
 
         items = listOf(
-            SearchItem(R.drawable.sample_image, "Item 1", "Naruto", "Naruto Uzumaki, a young ninja, seeks recognition and dreams of becoming the Hokage."),
-            SearchItem(R.drawable.sample_image, "Item 2", "Boruto", "Boruto Uzumaki, the son of Naruto, embarks on his own ninja journey."),
-            SearchItem(R.drawable.sample_image, "Item 3", "Spy X Family", "A spy, an assassin, and a telepath form an unconventional family."),
-            SearchItem(R.drawable.sample_image, "Item 4", "One Piece", "Monkey D. Luffy and his crew search for the legendary One Piece treasure."),
-            SearchItem(R.drawable.sample_image, "Item 5", "Attack on Titan", "Eren Yeager and his friends fight against titanic creatures to save humanity."),
-            SearchItem(R.drawable.sample_image, "Item 6", "Demon Slayer", "Tanjiro Kamado becomes a demon slayer to avenge his family and cure his sister."),
-            SearchItem(R.drawable.sample_image, "Item 7", "My Hero Academia", "Izuku Midoriya, born without powers, still dreams of becoming a hero."),
-            SearchItem(R.drawable.sample_image, "Item 8", "Jujutsu Kaisen", "Yuji Itadori joins a secret organization to battle supernatural threats."),
-            SearchItem(R.drawable.sample_image, "Item 9", "Tokyo Revengers", "Takemichi Hanagaki travels back in time to save his loved ones from a gang."),
-            SearchItem(R.drawable.sample_image, "Item 10", "Death Note", "Light Yagami gains a notebook with the power to kill anyone whose name is written in it."),
-            SearchItem(R.drawable.sample_image, "Item 11", "Fullmetal Alchemist", "Two brothers use alchemy in their quest to restore their bodies."),
-            SearchItem(R.drawable.sample_image, "Item 12", "Dragon Ball Z", "Goku and his friends defend Earth against powerful foes and seek the Dragon Balls.")
+            SearchItem(R.drawable.sample_image, "2002", "Naruto", "Naruto Uzumaki, a young ninja, seeks recognition and dreams of becoming the Hokage."),
+            SearchItem(R.drawable.sample_image, "2017", "Boruto", "Boruto Uzumaki, the son of Naruto, embarks on his own ninja journey."),
+            SearchItem(R.drawable.sample_image, "2020", "Spy X Family", "A spy, an assassin, and a telepath form an unconventional family."),
+            SearchItem(R.drawable.sample_image, "1999", "One Piece", "Monkey D. Luffy and his crew search for the legendary One Piece treasure."),
+            SearchItem(R.drawable.sample_image, "2013", "Attack on Titan", "Eren Yeager and his friends fight against titanic creatures to save humanity."),
+            SearchItem(R.drawable.sample_image, "2019", "Demon Slayer", "Tanjiro Kamado becomes a demon slayer to avenge his family and cure his sister."),
+            SearchItem(R.drawable.sample_image, "2016", "My Hero Academia", "Izuku Midoriya, born without powers, still dreams of becoming a hero."),
+            SearchItem(R.drawable.sample_image, "2020", "Jujutsu Kaisen", "Yuji Itadori joins a secret organization to battle supernatural threats."),
+            SearchItem(R.drawable.sample_image, "2021", "Tokyo Revengers", "Takemichi Hanagaki travels back in time to save his loved ones from a gang."),
+            SearchItem(R.drawable.sample_image, "2006", "Death Note", "Light Yagami gains a notebook with the power to kill anyone whose name is written in it."),
+            SearchItem(R.drawable.sample_image, "2003", "Fullmetal Alchemist", "Two brothers use alchemy in their quest to restore their bodies."),
+            SearchItem(R.drawable.sample_image, "1989", "Dragon Ball Z", "Goku and his friends defend Earth against powerful foes and seek the Dragon Balls.")
         )
+
 
 
         adapter = SearchAdapter(items)
