@@ -1,4 +1,4 @@
-package com.example.nontonin.ui.acvitiy
+package com.example.nontonin.ui.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -12,6 +12,9 @@ class ActivityDetails : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        
+        supportActionBar?.hide()
+
 
         // Retrieve data from intent
         val thumbnailResId = intent.getIntExtra(EXTRA_THUMBNAIL, 0)
@@ -24,6 +27,10 @@ class ActivityDetails : AppCompatActivity() {
         binding.tvTitle.text = title
         binding.tvReleaseDate.text = releaseDate
         binding.tvSynopsis.text = synopsis
+
+        binding.btnBack.setOnClickListener {
+            finish()
+        }
     }
 
     companion object {

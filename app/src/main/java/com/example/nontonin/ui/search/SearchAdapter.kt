@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nontonin.databinding.ItemSearchBinding
-import com.example.nontonin.ui.acvitiy.ActivityDetails
+import com.example.nontonin.ui.activity.ActivityDetails
 
 data class SearchItem(val photoResId: Int, val name: String, val releaseDate: String, val description: String)
 
