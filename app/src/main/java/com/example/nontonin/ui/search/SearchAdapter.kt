@@ -7,8 +7,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.nontonin.databinding.ItemSearchBinding
 import com.example.nontonin.ui.activity.ActivityDetails
 
-data class SearchItem(val photoResId: Int, val name: String, val releaseDate: String, val description: String)
-
 class SearchAdapter(private val items: List<SearchItem>) : RecyclerView.Adapter<SearchAdapter.SearchViewHolder>() {
 
     inner class SearchViewHolder(private val binding: ItemSearchBinding) : RecyclerView.ViewHolder(binding.root) {

@@ -25,10 +25,12 @@ class ProfileFragment : Fragment() {
         val root: View = binding.root
 
         val welcomeTextView: TextView = binding.welcome
-        welcomeTextView.text = "Welcome!"
+        welcomeTextView.text = "C030322027"
 
         val profileUsernameTextView: TextView = binding.profileUsernameText
-        profileUsernameTextView.text = "Username"
+        profileUsernameTextView.text = "Noor Rizky Permana"
+
+
 
         // Observe the LiveData and update the TextView
         profileViewModel.profileText.observe(viewLifecycleOwner) { text ->
