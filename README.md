@@ -34,10 +34,6 @@ Miru is an Android application designed to help users discover and explore a wid
 - **Name**: Noor Rizky Permana
 - **LinkedIn**: [Noor Rizky Permana](https://www.linkedin.com/in/noor-rizky-permana-965969269/)
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## Contributing
 
 1. Fork the repository.
