@@ -1,26 +1,25 @@
 package com.example.nontonin.ui.profile
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.example.nontonin.databinding.FragmentProfileBinding
 
 class ProfileFragment : Fragment() {
 
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
-    private lateinit var profileViewModel: ProfileViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        profileViewModel = ViewModelProvider(this).get(ProfileViewModel::class.java)
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
@@ -30,11 +29,11 @@ class ProfileFragment : Fragment() {
         val profileUsernameTextView: TextView = binding.profileUsernameText
         profileUsernameTextView.text = "Noor Rizky Permana"
 
-
-
-        // Observe the LiveData and update the TextView
-        profileViewModel.profileText.observe(viewLifecycleOwner) { text ->
-            binding.textProfile.text = text
+        val linkedInButton: TextView = binding.linkedinButton
+        linkedInButton.setOnClickListener{
+            val linkedInUrl = "https://www.linkedin.com/in/noor-rizky-permana-965969269/"
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(linkedInUrl))
+            startActivity(intent)
         }
 
         return root

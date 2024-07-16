@@ -28,7 +28,7 @@ class SearchFragment : Fragment() {
         _binding = FragmentSearchBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val items = listOf(
+        items = listOf(
             SearchItem(R.drawable.sample_image, "Naruto", "2002", "Naruto Uzumaki, a young ninja, seeks recognition and dreams of becoming the Hokage."),
             SearchItem(R.drawable.sample_image, "Boruto", "2017", "Boruto Uzumaki, the son of Naruto, embarks on his own ninja journey."),
             SearchItem(R.drawable.sample_image, "Spy X Family", "2020", "A spy, an assassin, and a telepath form an unconventional family."),
@@ -42,9 +42,6 @@ class SearchFragment : Fragment() {
             SearchItem(R.drawable.sample_image, "Fullmetal Alchemist", "2003", "Two brothers use alchemy in their quest to restore their bodies."),
             SearchItem(R.drawable.sample_image, "Dragon Ball Z", "1989", "Goku and his friends defend Earth against powerful foes and seek the Dragon Balls.")
         )
-
-
-
 
         adapter = SearchAdapter(items)
         binding.rvSearch.layoutManager = LinearLayoutManager(context)
@@ -78,8 +75,11 @@ class SearchFragment : Fragment() {
             it.name.contains(query, ignoreCase = true) ||
                     it.description.contains(query, ignoreCase = true)
         }
-        adapter = SearchAdapter(filteredItems)
-        binding.rvSearch.adapter = adapter
-        Toast.makeText(requireContext(), "Searching for: $query", Toast.LENGTH_SHORT).show()
+
+        if(filteredItems.isEmpty()){
+            Toast.makeText(requireContext(), "No results found.", Toast.LENGTH_SHORT).show()
+        }else{
+            adapter.updateData(filteredItems)
+        }
     }
 }

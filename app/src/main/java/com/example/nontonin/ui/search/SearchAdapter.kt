@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.nontonin.databinding.ItemSearchBinding
 import com.example.nontonin.ui.activity.ActivityDetails
 
-class SearchAdapter(private val items: List<SearchItem>) : RecyclerView.Adapter<SearchAdapter.SearchViewHolder>() {
+class SearchAdapter(private var items: List<SearchItem>) : RecyclerView.Adapter<SearchAdapter.SearchViewHolder>() {
 
     inner class SearchViewHolder(private val binding: ItemSearchBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: SearchItem) {
@@ -39,5 +39,10 @@ class SearchAdapter(private val items: List<SearchItem>) : RecyclerView.Adapter<
 
     override fun getItemCount(): Int {
         return items.size
+    }
+
+    fun updateData(newItems: List<SearchItem>) {
+        items = newItems
+        notifyDataSetChanged()
     }
 }
