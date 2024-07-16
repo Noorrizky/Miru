@@ -25,21 +25,18 @@ class HomeFragment : Fragment(), HomeAdapter.OnItemClickListener {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        // Initialize RecyclerView
         val recyclerView: RecyclerView = binding.rvMenu
         recyclerView.layoutManager = LinearLayoutManager(context)
 
-        // Sample data with drawable resources
         val items = listOf(
-            Item("Naruto", "Naruto Uzumaki, a young ninja, seeks recognition and dreams of becoming the Hokage.", R.drawable.sample_image),
-            Item("Boruto", "Boruto Uzumaki, the son of Naruto, embarks on his own ninja journey.", R.drawable.sample_image),
-            Item("Spy X Family", "A spy, an assassin, and a telepath form an unconventional family.", R.drawable.sample_image),
-            Item("One Piece", "Monkey D. Luffy and his crew search for the legendary One Piece treasure.", R.drawable.sample_image),
-            Item("Attack on Titan", "Eren Yeager and his friends fight against titanic creatures to save humanity.", R.drawable.sample_image),
-            Item("Demon Slayer", "Tanjiro Kamado becomes a demon slayer to avenge his family and cure his sister.", R.drawable.sample_image),
-            Item("My Hero Academia", "Izuku Midoriya, born without powers, still dreams of becoming a hero.", R.drawable.sample_image)
+            Item("Naruto", "Naruto Uzumaki, a young ninja, seeks recognition and dreams of becoming the Hokage.", R.drawable.sample_image, "2002"),
+            Item("Boruto", "Boruto Uzumaki, the son of Naruto, embarks on his own ninja journey.", R.drawable.sample_image, "2017"),
+            Item("Spy X Family", "A spy, an assassin, and a telepath form an unconventional family.", R.drawable.sample_image, "2020"),
+            Item("One Piece", "Monkey D. Luffy and his crew search for the legendary One Piece treasure.", R.drawable.sample_image, "1999"),
+            Item("Attack on Titan", "Eren Yeager and his friends fight against titanic creatures to save humanity.", R.drawable.sample_image, "2013"),
+            Item("Demon Slayer", "Tanjiro Kamado becomes a demon slayer to avenge his family and cure his sister.", R.drawable.sample_image, "2019"),
+            Item("My Hero Academia", "Izuku Midoriya, born without powers, still dreams of becoming a hero.", R.drawable.sample_image, "2016")
         )
-
 
         val adapter = HomeAdapter(items, this)
         recyclerView.adapter = adapter
@@ -48,10 +45,10 @@ class HomeFragment : Fragment(), HomeAdapter.OnItemClickListener {
     }
 
     override fun onItemClick(item: Item) {
-        val intent = Intent(context, ActivityDetails::class.java).apply {
+        val intent = Intent(requireContext(), ActivityDetails::class.java).apply {
             putExtra(ActivityDetails.EXTRA_THUMBNAIL, item.imageResId)
-            putExtra(ActivityDetails.EXTRA_TITLE, item.name)
-            putExtra(ActivityDetails.EXTRA_RELEASE_DATE, "Sample Release Date")  // Adjust according to your data model
+            putExtra(ActivityDetails.EXTRA_TITLE, item.title)
+            putExtra(ActivityDetails.EXTRA_RELEASE_DATE, item.releaseDate)
             putExtra(ActivityDetails.EXTRA_SYNOPSIS, item.description)
         }
         startActivity(intent)

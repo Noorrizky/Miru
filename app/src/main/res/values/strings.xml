@@ -6,4 +6,8 @@
     <string name="searchbar_hint">Masukkan kata</string>
     <string name="thumbnail">Deskripsi</string>
     <string name="back_button">back</string>
+    <string name="title_activity_welcome">WelcomeActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="welcome">Selamat datang di Aplikasi Miru</string>
 </resources>

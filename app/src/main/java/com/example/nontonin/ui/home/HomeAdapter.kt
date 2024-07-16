@@ -16,9 +16,9 @@ class HomeAdapter(private val items: List<Item>, private val listener: OnItemCli
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val ivItemPhoto: ImageView = itemView.findViewById(R.id.ivItemPhoto)
         val tvItemName: TextView = itemView.findViewById(R.id.tvItemName)
         val tvItemDescription: TextView = itemView.findViewById(R.id.tvItemDescription)
+        val ivItemPhoto: ImageView = itemView.findViewById(R.id.ivItemPhoto)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -29,10 +29,9 @@ class HomeAdapter(private val items: List<Item>, private val listener: OnItemCli
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = items[position]
-        holder.tvItemName.text = item.name
+        holder.tvItemName.text = item.title
         holder.tvItemDescription.text = item.description
         holder.ivItemPhoto.setImageResource(item.imageResId)
-
         holder.itemView.setOnClickListener {
             listener.onItemClick(item)
         }
